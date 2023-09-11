@@ -1,0 +1,458 @@
+:root {
+    --clr-primary: #172339;
+    --clr-secondary: #49566D;
+    /* text description */
+    --clr-first-bg: #F3EDE7;
+    --clr-second-bg: #FAF8F6;
+    /* text desciption below, button  */
+
+    --clr-active-gradient: linear-gradient(135deg, #A060FF 0%, #CB30E3 49.21%, #FFA84E 100%);
+
+    --ff-family: 'Epilogue', sans-serif;
+    --ff-regular: 400;
+    --ff-bold: 700;
+}
+
+/* CSS RESET */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    font-family: var(--ff-family);
+    background-color: var(--clr-second-bg);
+    position: relative;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* /CSS RESET */
+
+/* Class Utilities */
+
+.flex {
+    display: flex;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.hide {
+    display: none;
+}
+
+.bold {
+    font-weight: var(--ff-bold);
+}
+
+h3 {
+    font-size: clamp(2.375rem, 7vw, 4.5rem);
+    font-weight: var(--ff-regular);
+}
+
+/* /Class Utilities */
+
+main:first-child {
+    padding: 1rem;
+}
+
+header {
+    justify-content: space-between;
+    margin-block: 1.5rem 3.5rem;
+}
+
+header h3 {
+    font-size: 2rem;
+    font-weight: var(--ff-bold);
+}
+
+header button {
+    width: 11.375rem;
+    /*clamp(11.375rem, 90%, 13.6875rem);*/
+    font-size: 0.875rem;
+    font-weight: var(--ff-bold);
+    color: var(--clr-primary);
+    border-radius: 0.375rem;
+    padding: 0.75em 0.90em;
+    background-color: var(--clr-second-bg);
+}
+
+header button:active {
+    background-color: var(--clr-primary);
+    color: var(--clr-second-bg);
+}
+
+main {
+    width: min(72rem, 95%);
+    margin: auto;
+}
+
+main:not(:first-child) {
+    width: clamp(23.4375rem, 90vw, 69.3125rem);
+
+}
+
+section {
+    flex-direction: column;
+}
+
+.mainView {
+    display: grid;
+    /* grid-template-columns: 30% 13.5% 14% 30% 10%; */
+}
+
+.mainViewDescription {
+    font-size: clamp(1rem, 100%, 1.125rem);
+    font-weight: var(--ff-regular);
+    color: var(--clr-secondary);
+    max-width: 21.875rem;
+}
+
+.celphoneimg {
+    width: 21.4375rem;
+    height: 15rem;
+    /* border-radius: 0.9375rem; */
+}
+
+.infoBox *:not(:first-child) {
+    margin-bottom: 2rem;
+}
+
+.infoBox figure {
+    align-self: flex-end;
+    margin: 0;
+}
+
+.infoBox img {
+    width: 10.44rem;
+}
+
+.infoBox button {
+    background-color: var(--clr-primary);
+    color: var(--clr-second-bg);
+    border: 0;
+    border-radius: 0.375rem;
+    width: 16rem;
+    padding: 0.90em 1.70em;
+    font-size: 1.1rem;
+    font-weight: var(--ff-bold);
+}
+
+.infoBox button:active {
+    background: var(--clr-active-gradient);
+}
+
+aside {
+    flex-direction: column;
+}
+
+.companyInfo {
+    margin-top: 3.5rem;
+    text-align: center;
+}
+
+.companyInfo div {
+    margin-bottom: 2.5rem;
+}
+
+.companyInfo h3 {
+    font-size: 3rem;
+    font-weight: var(--ff-bold);
+}
+
+.companyInfo p {
+    font-size: 1rem;
+    font-weight: var(--ff-regular);
+    color: var(--clr-secondary);
+}
+
+
+
+.boxSubject {
+    background-color: var(--clr-primary);
+    color: var(--clr-second-bg);
+    padding: 16rem 1rem 1rem 1rem;
+    position: relative;
+    border-radius: 0.9375rem;
+    margin-top: 11rem;
+    text-align: center;
+    flex-direction: column;
+}
+
+
+.boxSubject .subject {
+    position: absolute;
+    width: 15.75rem;
+    height: 25.125rem;
+    top: -9rem;
+    left: 0;
+    /* centrar elemento com position:absolute   */
+    right: 0;
+    /* centrar elemento com position:absolute   */
+    margin: 0 auto;
+    /* centrar elemento com position:absolute   */
+}
+
+.line {
+    display: inline-block;
+    width: 3.07925rem;
+    height: 2.5rem;
+    margin-top: 2.5rem;
+}
+
+.infoSubject>* {
+    margin-top: 2.5rem;
+}
+
+.identity {
+    margin-bottom: 4rem;
+}
+
+footer {
+    flex-direction: column;
+    text-align: center;
+}
+
+footer h3 {
+    margin-top: 3.5rem;
+    font-size: 2rem;
+    color: var(--clr-primary);
+}
+
+footer p {
+    font-size: 0.9375rem;
+    color: var(--clr-secondary);
+    margin-block: 2.06rem;
+}
+
+footer div {
+    margin-bottom: 5rem;
+}
+
+.links {
+    justify-content: center;
+}
+
+.links i:nth-child(2) {
+    margin-inline: 2rem;
+}
+
+.links img {
+    height: 1.25rem;
+}
+
+.bottomBg {
+    position: absolute;
+    background-color: var(--clr-first-bg);
+    width: 100%;
+    height: 29rem;
+    z-index: -1;
+    bottom: 0;
+}
+
+@media only screen and (min-width:48rem) {
+    aside {
+        flex-direction: row;
+    }
+
+    aside div {
+        flex-grow: 1;
+    }
+
+    /* main:not(:first-child){
+
+    } */
+
+
+    .mainView {
+        grid-template-columns: 60% 10% 30%;
+    }
+
+    .mainView>figure {
+        grid-column: 2/4;
+        grid-row: 1;
+    }
+
+    .infoBox {
+        grid-column: 1/3;
+        grid-row: 1;
+        z-index: 1;
+        padding-top: 2rem
+    }
+
+    .celphoneimg {
+        content: url('./assets/image-hero-portrait.png');
+        height: 30.125rem;
+    }
+}
+
+@media screen and (min-width:90rem) {
+
+    .mainView {
+        grid-template-columns: 50% 20%;
+    }
+
+    section {
+        flex-direction: row;
+    }
+
+    .infoBox figure {
+        margin-right: 6rem;
+    }
+
+    .infoBox img {
+        width: 18.44963rem;
+    }
+
+    aside {
+        flex-direction: column;
+        width: 11.875rem;
+    }
+
+    aside div {
+        text-align: start;
+    }
+
+    .celphoneimg {
+        height: 37.5rem;
+    }
+
+    .boxSubject {
+        flex-direction: row;
+        padding: 3rem 7.50rem;
+        height: 34.0625rem;
+        width: 100%;
+    }
+
+    .boxSubject div:first-child {
+        width: 22.48813rem;
+    }
+
+    .boxSubject .lineClass {
+        flex-grow: 1;
+        padding-top: 5rem;
+    }
+
+    .boxSubject .subject {
+        position: absolute;
+        width: auto;
+        height: 36.84731rem;
+        top: -2.8rem;
+        right: 31rem;
+        margin: 0 auto;
+    }
+
+    .line {
+        width: 4.00306rem;
+        height: 3.25rem;
+    }
+
+    .infoSubject {
+        text-align: start;
+        max-width: 22.875rem;
+    }
+
+    .infoSubject h3 {
+        font-size: 3rem;
+    }
+
+    .infoSubject p {
+        font-size: 1.21rem;
+        line-height: 2.1875rem
+    }
+
+    .links {
+        justify-content: end;
+    }
+
+    .links i:active {
+        opacity: 0.5;
+    }
+
+    footer {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    footer h3 {
+        margin: 0;
+        text-align: start;
+    }
+
+    footer>* {
+        flex-grow: 1;
+    }
+
+    footer div {
+        margin: 0;
+    }
+}
